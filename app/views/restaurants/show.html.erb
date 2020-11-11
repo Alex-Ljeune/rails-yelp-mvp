@@ -1,0 +1,16 @@
+<div class="container">
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.category %></p>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+
+<ul>
+  <%= link_to 'Edit this restaurant', edit_restaurant_path(@restaurant) %>
+  <%= link_to 'Back to all restaurants', restaurants_path %>
+  <%= link_to "Delete",
+              restaurant_path(@restaurant),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+  <%= link_to 'Review this restaurant', new_restaurant_review_path(@restaurant) %>
+</ul>
+</div>
